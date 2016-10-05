@@ -181,6 +181,14 @@ class wyyyy(object):
 		print("########################")
 		os.system(player)
 
+	def writeToFile(self,albunName,songdict):
+		with open(os.path.dirname(os.path.realpath(__file__))+'/songLst.txt','a') as f:
+			f.write("songLst " + albunName+ "\n")
+			for k,v in songdict.items():
+				f.write(v + " " + k + "\n")
+			f.write("\n")
+
+
 	def playBympg(self,albunName,songdict):
 		player="mpg123 -C --title -v -u a "
 		print("########################")
@@ -216,4 +224,5 @@ if(len(sys.argv) > 2):
 		albumName,songdict = client.getBySingle(param)
 else:
 	albumName,songdict = client.getDefault(param)
+client.writeToFile(albumName,songdict)
 client.playBympg(albumName,songdict)
