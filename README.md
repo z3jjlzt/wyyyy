@@ -5,8 +5,11 @@
 ## 准备工作(Ubuntu)
  * sudo apt-get install mpg123
  * sudo apt-get install python3
+ * cd ~/
+ * git clone git@github.com:z3jjlzt/wyyyy.git
+ * cd wyyyy/
  * chmod 755 wyyyy.py
- * 
+ 
 ## 介绍
  * 不添加参数默认爬取华语歌单　./wyyyy.py
  * -t 单曲搜索 ./wyyyy.py -t musicName
